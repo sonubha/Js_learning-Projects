@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <a class="home" href="../../Index.html">Home</a>
+    <h2>Color Scheme Switcher</h2>
+    <div class="main-color-box">
+        <div class="color-box"><button id="color-box-grey"></button></div>
+
+        <div class="color-box"><button id="color-box-white"></button></div>
+        <div class="color-box"><button id="color-box-blue"></button></div>
+        <div class="color-box"><button id="color-box-yellow"></button></div>
+    </div>
+    <h3 id="footer">Try Clicking on one of the colors above to change the background color of this page</h3>
+
+</body>
+<script>
+    const btns = document.querySelectorAll('button');
+    // console.log(btns);
+    const body = document.querySelector('body');
+    // var footer = document.getElementById('footer');
+
+btns.forEach(function(button){
+    button.addEventListener('click',function(e){
+        // console.log(e.target.id);
+        if (e.target.id === 'color-box-grey') {
+            body.style.backgroundColor = 'grey';
+            
+        } else if (e.target.id === 'color-box-white') {
+            body.style.backgroundColor = 'white';
+            
+        } else if (e.target.id === 'color-box-blue') {
+            body.style.backgroundColor = 'blue';
+            // footer.style.color = 'white';
+        } else if (e.target.id === 'color-box-yellow') {
+            body.style.backgroundColor = 'yellow';
+        }
+    })
+})
+
+</script>
+
+
+</html>
