@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>BMI Calculator</title>
+</head>
+
+<body>
+  <a class="home" href="../../Index.html">Home</a>
+  <h2>BMI Calculator</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="height">Height in CM</label><br />
+      <input type="text" id="height" />
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Weight in KG</label><br />
+      <input type="text" id="weight" />
+    </div>
+
+    <button id="button" type="submit">Calculate</button>
+    <div id="results"></div>
+    <div id="weight-guide">
+      <h3>BMI Weight Guide</h3>
+      <p>Under Weight = Less than 18.5</p>
+      <p>Normal Range = 18.5 and 24.9</p>
+      <p>Overweight =Greater than 24.9 </p>
+    </div>
+  </form>
+</body>
+<script>
+  const form = document.querySelector('form')
+  form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    const height = parseInt(document.querySelector('#height').value)
+    const weight = parseInt(document.querySelector('#weight').value)
+    const results = document.querySelector('#results')
+
+    if (height === "" || height < 0 || isNaN(height)) {
+      results.innerHTML = `Please give a valid height ${height}`
+    }
+    else if (weight === "" || weight < 0 || isNaN(weight)) {
+      results.innerHTML = `Please give a valid Weight ${weight}`
+    }
+    else {
+      const BMI = (weight / ((height * height) / 10000)).toFixed(2);
+      if(BMI<18.6){
+ results.innerHTML = `<strong> ${BMI} Under Weight</strong>`
+      results.style.fontSize = "24px";
+      results.style.color = "#b8af04";
+      
+      }
+      else if (BMI >= 18.6 && BMI <= 24.9){
+        results.innerHTML = `<strong> ${BMI} Normal Range</strong>`
+        results.style.fontSize = "24px";
+      results.style.color = "green";
+      
+      }
+      else{
+         results.innerHTML = `<strong> ${BMI} Over Weight</strong>`
+        results.style.fontSize = "24px";
+      results.style.color = "red";
+      }
+     
+    }
+
+
+  })
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-color: #f7f7f7;
+}
+
+.home {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 200px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
