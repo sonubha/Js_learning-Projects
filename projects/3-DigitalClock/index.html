@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <a class="home" href="../../Index.html">Home</a>
+    <div id="clock-body">
+        <div id="heading">Your local time</div>
+        <div id="display"></div>
+    </div>
+    
+</body>
+<script type="module">
+    const clock = document.getElementById('display')
+    setInterval(function(){
+        const date = new Date()
+        clock.innerHTML= date.toLocaleTimeString()
+    },1000)
+
+</script>
+</html>
